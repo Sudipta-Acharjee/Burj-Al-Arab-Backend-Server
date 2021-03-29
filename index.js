@@ -9,6 +9,13 @@ console.log(process.env.DB_PASS)
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.f3vnz.mongodb.net/burjAlArab?retryWrites=true&w=majority`;
 
 const port = 5000;
+
+app.get('/', (req, res) => {
+    res.send("hello from db.Its working")
+})
+
+
+
 const app = express()
 app.use(cors());
 app.use(bodyParser.json());
