@@ -10,16 +10,15 @@ const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster
 
 const port = 5000;
 
-app.get('/', (req, res) => {
-    res.send("hello from db.Its working")
-})
-
-
-
 const app = express()
 app.use(cors());
 app.use(bodyParser.json());
 var serviceAccount = require("./configs/burj-al-arab-2ada1-firebase-adminsdk-atccl-a9f1fc78ef.json");
+
+app.get('/', (req, res) => {
+    res.send("hello from db.Its working")
+})
+
 
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
